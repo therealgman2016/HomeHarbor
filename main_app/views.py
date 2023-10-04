@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Listing
+from .models import Listing, Agent
 
 
 def home(request):
@@ -27,7 +27,7 @@ def listings_detail(request, listing_id):
 
 class ListingCreate(CreateView):
     model = Listing
-    fields = '__all__'
+    fields = ['price', 'description', 'sqft', 'address']
 
 
 class ListingUpdate(UpdateView):
@@ -38,3 +38,12 @@ class ListingUpdate(UpdateView):
 class ListingDelete(DeleteView):
     model = Listing
     success_url = '/listings'
+
+def listings_detail(request, listing_id):
+  listing = Listing.objects.get(id=listing_id)
+  id_list = listing.agents.all().values_list('id')
+  agents_listing_doesnt_have = Agent.objects.exclude(id__in=id_list)
+  return render(request, 'listings/detail.html', {
+    'listing': listing,
+    'agents': agents_listing_doesnt_have
+  })
