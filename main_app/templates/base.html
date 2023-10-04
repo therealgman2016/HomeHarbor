@@ -15,11 +15,12 @@
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Cat Collector</a></li>
+          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Cat Collector</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/listings">View All My Listings</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'listings_create' %}">Add a Listing</a></li>
+          <li><a href="{% url 'index' %}">View All My Listings</a></li>
         </ul>
       </div>
     </nav>

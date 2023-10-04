@@ -1,6 +1,8 @@
 from django.shortcuts import render
-
+from django.views.generic.edit import CreateView
 from .models import Listing
+
+
 
 
 def home(request):
@@ -20,3 +22,7 @@ def listings_detail(request, listing_id):
    return render(request, 'listings/details.html', { 
       'listing': listing 
 })
+
+class ListingCreate(CreateView):
+   model = Listing
+   fields = '__all__'
