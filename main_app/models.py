@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Listing(models.Model):
@@ -9,3 +10,6 @@ class Listing(models.Model):
 
     def __str__(self):
         return self.address
+    
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'listing_id': self.id})
