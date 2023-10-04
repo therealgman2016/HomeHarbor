@@ -15,3 +15,8 @@ def listings_index(request):
     'listings': listings
 })
 
+def listings_detail(request, listing_id):
+   listing = Listing.objects.get(id=listing_id)
+   return render(request, 'listings/details.html', { 
+      'listing': listing 
+})
