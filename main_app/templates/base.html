@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Home Harbor</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
   <header class="navbar-fixed">
@@ -18,9 +18,11 @@
           <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Home Harbor</a></li>
         </ul>
         <ul class="right">
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'listings_create' %}">Add a Listing</a></li>
           <li><a href="{% url 'index' %}">View All My Listings</a></li>
+          <li><a href="{% url 'listings_create' %}">Add a Listing</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'agents_index' %}">View All Agents</a></li>
+          <li><a href="{% url 'agents_create' %}">Add a Agent</a></li>
         </ul>
       </div>
     </nav>
