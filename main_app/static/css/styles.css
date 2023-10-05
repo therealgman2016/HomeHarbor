@@ -20,3 +20,7 @@ footer.page-footer {
 .page-footer {
   background-color: dodgerblue;
 }
+
+h1 {
+  font-size: 4rem;
+}
