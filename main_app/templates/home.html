@@ -1,14 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Harbor</title>
-</head>
-<body>
-    <h1>Home</h1>
-</body>
-</html>
+
+
+<div class="homepage-container">
+<h1 class="page-title">Welcome to HomeHarbor!</h1>
+<div class="homepage-panels">
+    <div class="panel">
+    <h1>View Listings</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, nostrum?</p>
+    <a href="{% url 'index' %}">Listings</a>
+    </div>
+    <div class="panel">
+        <h1>Create Account</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, nostrum?</p>
+        <a href="{% url 'signup' %}">Sign Up</a>
+        
+    </div>
+    <div class="panel"> 
+        <h1>Browse Agents</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, nostrum?</p>
+        <a href="{% url 'agents_index' %}">Agents</a>
+    </div>
+</div>
+</div>
+
 {% endblock %}
