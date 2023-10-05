@@ -182,3 +182,256 @@ main {
 .panel>a:hover {
   background-color: dodgerblue;
 }
+
+/* Listing Index */
+
+.listing-index {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 60rem;
+  height: 20rem;
+}
+
+.listing-index>a {
+  margin-top: 5rem;
+  color: dodgerblue;
+  font-size: 4rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.listing-index>a:hover {
+
+  color: darkblue;
+}
+
+.listing-index>ul {
+  list-style-type: none;
+  display: flex;
+  width: 55rem;
+  font-size: 2rem;
+  font-weight: 900;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.listing-index>p {
+  width: 40rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Create Listing Page */
+
+.add-listing-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 60rem;
+  height: 45rem;
+}
+
+.listing-form {
+  margin: 0;
+  width: 50rem;
+  height: 35rem;
+  font-size: 2rem;
+}
+
+.listing-form>tbody>tr>td>input {
+  font-size: 2.5rem;
+}
+
+.add-listing-btn {
+  width: 20rem;
+  height: 4rem;
+  border: 0;
+  background-color: darkblue;
+  color: white;
+  font-weight: 900;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.add-listing-btn:hover {
+  cursor: pointer;
+  background-color: dodgerblue;
+}
+
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 60rem;
+  height: 45rem;
+  font-size: 1.5rem;
+}
+
+.log-in-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 40rem;
+  height: 30rem;
+  font-size: 2rem;
+}
+
+/* Agent Index */
+
+.agent-index {
+
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 40rem;
+  height: 15rem;
+}
+
+.agent-index>a {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  color: dodgerblue;
+  text-decoration: none;
+}
+
+.agent-index>a:hover {
+  color: darkblue;
+}
+
+.agent-index>p {
+  text-transform: lowercase;
+  margin-top: 4rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+/* Agent Show */
+
+.agent-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 45rem;
+  height: 25rem;
+}
+
+.agent-show>h1 {
+  text-transform: uppercase;
+  color: darkblue;
+  font-size: 3rem;
+}
+
+.agent-show>p {
+  text-transform: lowercase;
+  font-size: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.edit-delete {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 25rem;
+  font-size: 2rem;
+}
+
+.edit-delete>a {
+  text-decoration: none;
+  padding: .5rem;
+  width: 8rem;
+  background-color: dodgerblue;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.edit-delete>a:hover {
+  background-color: darkblue;
+}
+
+/* Agent Delete */
+
+.agent-delete {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 45rem;
+  height: 15rem;
+}
+
+.delete-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25rem;
+  font-size: 2rem;
+}
+
+.delete-form>a {
+  text-decoration: none;
+  padding: .5rem;
+  width: 8rem;
+  background-color: rgb(179, 0, 0);
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  border: 0;
+}
+
+.delete-form>a:hover {
+  background-color: red;
+}
+
+
+.delete-form>input {
+  font-weight: 900;
+  text-decoration: none;
+  padding: .7rem;
+  width: 12rem;
+  background-color: rgb(0, 60, 255);
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  border: 0;
+}
+
+.delete-form>input:hover {
+  cursor: pointer;
+  background-color: darkblue;
+}

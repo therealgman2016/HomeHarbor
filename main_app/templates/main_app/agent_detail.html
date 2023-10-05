@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="homepage-container">
+<h1 class="page-title">Agent Details</h1>
 
-<h1>Agent Details</h1>
 
-<div class="row">
-  <div class="col s6 col-offset-3">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">{{ agent.name }}</span>
-        <p>email: {{ agent.email }}</p>
-      </div>
-      <div class="card-action">
+      <div class="agent-show">
+        <h1>{{ agent.name }}</h1>
+        <p>{{ agent.email }}</p>
+      
+
+      <div class="edit-delete">
         <a href="{% url 'agents_update' agent.id %}">Edit</a>
         <a href="{% url 'agents_delete' agent.id %}">Delete</a>
       </div>
-    </div>
+
+    
+
   </div>
+
 </div>
 {% endblock %}

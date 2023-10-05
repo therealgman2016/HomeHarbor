@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Home Harbor List</h1>
+<div class="homepage-container">
+<h1 class="page-title">All Listings</h1>
 
 {% for listing in listings %}
-  <div class="card">
-    <a href="{% url 'detail' listing.id %}">
-      <div class="card-content">
-        <span class="card-title">{{ listing.address }}</span>
+
+  <div class="listing-index">
+    <a href="{% url 'detail' listing.id %}">{{ listing.address }}
       </a>
-        <p>Price: {{ listing.price }}</p>
-        <p>Description: {{ listing.description }}</p>
-        <p>sqft: {{ listing.sqft }}</p>
-      </div>
-    
+      <ul>
+        <li>${{ listing.price }}</li>
+        <li>{{ listing.sqft }} sqft</li>
+      </ul>
+      <p>{{ listing.description }}<p>
   </div>
-{% endfor %}
+
+  {% endfor %}
+
+
+</div>
+
 
 {% endblock %}
