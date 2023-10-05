@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -21,6 +21,7 @@ class Listing(models.Model):
     description = models.CharField(max_length=200)
     sqft = models.IntegerField()
     agents = models.ManyToManyField(Agent)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.address
