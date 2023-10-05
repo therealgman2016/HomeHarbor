@@ -1,4 +1,7 @@
 from django.contrib import admin
 from .models import Listing
-# Register your models here.
+from .models import Agent
+
 admin.site.register(Listing)
+
+admin.site.register(Agent)

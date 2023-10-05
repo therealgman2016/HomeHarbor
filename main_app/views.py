@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 from .models import Listing, Agent
 
 
@@ -20,8 +21,10 @@ def listings_index(request):
 
 def listings_detail(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
+    id_list = listing.agents.all().values_list('id')
+    agents_listing_doesnt_have = Agent.objects.exclude(id__in=id_list)
     return render(request, 'listings/detail.html', {
-        'listing': listing
+        'listing': listing, 'agents': agents_listing_doesnt_have
     })
 
 
@@ -39,11 +42,39 @@ class ListingDelete(DeleteView):
     model = Listing
     success_url = '/listings'
 
-def listings_detail(request, listing_id):
-  listing = Listing.objects.get(id=listing_id)
-  id_list = listing.agents.all().values_list('id')
-  agents_listing_doesnt_have = Agent.objects.exclude(id__in=id_list)
-  return render(request, 'listings/detail.html', {
-    'listing': listing,
-    'agents': agents_listing_doesnt_have
-  })
+
+# Agent Views
+
+class AgentList(ListView):
+    model = Agent
+
+
+class AgentDetail(DetailView):
+    model = Agent
+
+
+class AgentCreate(CreateView):
+    model = Agent
+    fields = '__all__'
+
+
+class AgentUpdate(UpdateView):
+    model = Agent
+    fields = '__all__'
+
+
+class AgentDelete(DeleteView):
+    model = Agent
+    success_url = '/agents'
+
+# Association Functions
+
+
+def assoc_agent(request, listing_id, agent_id):
+    Listing.objects.get(id=listing_id).agents.add(agent_id)
+    return redirect('detail', listing_id=listing_id)
+
+
+def de_assoc_agent(request, listing_id, agent_id):
+    Listing.objects.get(id=listing_id).agents.remove(agent_id)
+    return redirect('detail', listing_id=listing_id)

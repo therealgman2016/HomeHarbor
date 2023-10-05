@@ -1,65 +1,69 @@
-{% extends 'base.html' %}
-{% block content %}
-
+{% extends 'base.html' %} {% block content %}
 <h1>Listing Details</h1>
-
 <div class="card">
   <div class="card-content">
-    <span class="card-title">{{ listing.address }}</span>
-    <p>Price: {{ listing.price }}</p>
-    <p>Description: {{ listing.description|linebreaks }}</p>
-    <p>sqft: {{ listing.sqft }}</p>
+    <span class="card-title">
+      {{ listing.address }}</span>
+    <p>Price:
+      {{ listing.price }}
+    </p>
+    <p>Description:
+      {{ listing.description|linebreaks }}
+    </p>
+    <p>sqft:
+      {{ listing.sqft }}
+    </p>
   </div>
   <div class="card-action">
     <a href="{% url 'listings_update' listing.id %}">Edit</a>
     <a href="{% url 'listings_delete' listing.id %}">Delete</a>
   </div>
 </div>
-
-<!-- This is all new markup to be added just above the <script> tag -->
-  <hr>
-  <div class="row">
-    <div class="col s6">
-      <h3>{{ listing.name }}'s Agents</h3>
-      {% if listing.agents.count %}
-        {% for agent in listing.agents.all %}
-          <div class="card">
-            <div class="card-content">
-              <span class="card-title">
-                A <span>{{ agent.name }}</span> {{ agent.email }}
-              </span>
-            </div>
-          </div>
-        {% endfor %}
-      {% else %}
-        <h5>No Agents 😿</h5>
-      {% endif %}
+<hr />
+<div class="row">
+  <div class="col s6">
+    <h3>
+      {{ listing.address }}'s Agents
+    </h3>
+    {% if listing.agents.count %} {% for agent in listing.agents.all %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+          Agent: <span>
+            {{ agent.name }}</span>
+          {{ agent.email }}
+        </span>
+        <form action="{% url 'de_assoc_agent' listing.id agent.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Remove</button>
+        </form>
+      </div>
     </div>
-    <!-- Available agent will come after this line -->
-    <!-- <div class="col s6">
-      <h3>Available Toys</h3>
-      {% if toys.count %}
-        {% for toy in toys.all %}
-          <div class="card">
-            <div class="card-content">
-              <span class="card-title">
-                A <span style="color: {{ toy.color }}">{{ toy.color }}</span> {{ toy.name }}
-              </span>
-            </div>
-            <div class="card-action">
-              <form action="" method="POST">
-                {% csrf_token %}
-                <button type="submit" class="btn">Add</button>
-              </form>
-            </div>
-          </div>
-        {% endfor %}
-      {% else %}
-        <h5>{{cat.name}} Already Has All Toys Available</h5>
-      {% endif %}
-    </div> -->
+    {% endfor %} {% else %}
+    <h5>No Agents currently assigned</h5>
+    {% endif %}
   </div>
-
-
+  <div class="col s6">
+    <h3>Available Agents</h3>
+    {% if agents.count %} {% for agent in agents.all %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+          Agent:<span>
+            {{ agent.name }}</span>
+          {{ agent.email }}
+        </span>
+      </div>
+      <div class="card-action">
+        <form action="{% url 'assoc_agent' listing.id agent.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <h5>All agents are already assigned for {{listing.address}}!</h5>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}
-
