@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="homepage-container">
+<h1 class="page-title">All Listings</h1>
+
+{% for listing in listings %}
+
+  <div class="listing-index">
+    <a href="{% url 'detail' listing.id %}">{{ listing.address }}
+      </a>
+      <ul>
+        <li>${{ listing.price }}</li>
+        <li>{{ listing.sqft }} sqft</li>
+      </ul>
+      <p>{{ listing.description }}<p>
+  </div>
+
+  {% endfor %}
+
+
+</div>
+
+
+{% endblock %}

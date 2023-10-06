@@ -12,7 +12,7 @@
   <div class="nav-div">
     <div class="right-nav">
       <ul class="nav-list">
-        <li><a href="{% url 'index' %}">View All Listings</a></li>
+        <li><a href="{% url 'index_all' %}">View All Listings</a></li>
         <li><a href="{% url 'agents_index' %}">View All Agents</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'agents_create' %}">Add a Agent</a></li>

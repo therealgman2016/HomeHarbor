@@ -26,6 +26,13 @@ def listings_index(request):
         'listings': listings
     })
 
+
+def listings_index_all(request):
+    listings = Listing.objects.all()
+    return render(request, 'listings/indexAll.html', {
+        'listings': listings
+})
+
 @login_required
 def listings_detail(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
