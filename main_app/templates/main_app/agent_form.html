@@ -7,15 +7,16 @@
   {% else %}
     <h1 class="page-title">Add Agent</h1>
   {% endif %}
-  <!-- Leaving the action empty makes the form post to the same url used to display it -->
-  <form class="add-listing-container" action="" method="post">
-    <!-- Django requires the following for security purposes -->
+  <form class="add-agent-container" action="" method="post">
     {% csrf_token %}
-    <table class="listing-form">
-      <!-- Render the inputs inside of <tr>s & <td>s -->
+    <table class="agent-form">
       {{ form.as_table }}
     </table>
-    <input class='add-listing-btn' type="submit" value="Submit!" class="btn">
+    {% if object %}
+    <input class='add-listing-btn' type="submit" value="Edit Agent" class="btn">
+    {% else %}
+    <input class='add-listing-btn' type="submit" value="Add Agent" class="btn">
+    {% endif %}
   </form>
 </div>
 {% endblock %}
