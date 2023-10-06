@@ -6,7 +6,7 @@
 <form class="log-in-container" method="POST" action="{% url 'login' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="hidden" name="next" value="{{ next }}">
+    <input class='log-in-input' type="hidden" name="next" value="{{ next }}">
     <button class='add-listing-btn' type="submit" class="btn">Log In</button>
   </form>
 </div>

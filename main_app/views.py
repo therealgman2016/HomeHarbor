@@ -38,7 +38,7 @@ def listings_detail(request, listing_id):
 
 class ListingCreate(LoginRequiredMixin, CreateView):
     model = Listing
-    fields = ['price', 'description', 'sqft', 'address']
+    fields = ['address', 'price', 'description', 'sqft']
     
     def form_valid(self, form):
         form.instance.user = self.request.user

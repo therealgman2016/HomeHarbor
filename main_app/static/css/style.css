@@ -1,6 +1,9 @@
 html {
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url('../images/house2.jpg');
+  background-position: center center;
+  background-size: cover;
 }
 
 body {
@@ -120,10 +123,6 @@ main {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 90rem;
-  background-image: url('../images/house2.jpg');
-  background-position: center center;
-  background-size: cover;
 }
 
 .page-title {
@@ -273,13 +272,25 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
-  width: 60rem;
-  height: 45rem;
+  width: 80rem;
+  height: 30rem;
   font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.sign-up {
+  position: relative;
+  left: 5rem;
+}
+
+.sign-btn {
+  position: relative;
+  margin-top: 1rem;
+  left: 24rem;
 }
 
 .log-in-container {
@@ -381,6 +392,39 @@ main {
 
 /* Agent Delete */
 
+.agent-form {
+  font-size: 2rem;
+  width: 20rem;
+  height: 15rem;
+  margin-bottom: 4rem;
+}
+
+.agent-form>tbody>tr>td>input {
+  padding: .5rem;
+}
+
+.agent-form>tbody>tr>th {
+  margin-bottom: 5rem;
+}
+
+.add-agent-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 40rem;
+  height: 30rem;
+}
+
+
+
+
+
+/* Agent Delete */
+
 .agent-delete {
   display: flex;
   justify-content: space-around;
@@ -434,4 +478,142 @@ main {
 .delete-form>input:hover {
   cursor: pointer;
   background-color: darkblue;
+}
+
+/* Listing Show Page */
+
+.edit-delete-show {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40rem;
+  height: 6rem;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.edit-delete-show>a {
+  text-decoration: none;
+  padding: .5rem;
+  width: 8rem;
+  height: 2.5rem;
+  background-color: dodgerblue;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.edit-delete-show>a:hover {
+  background-color: darkblue;
+}
+
+.show-index {
+  margin: 0;
+}
+
+.agent-container {
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  margin-top: 3rem;
+  width: 70rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 10rem;
+}
+
+.available-agents {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 25rem;
+}
+
+.available-agents-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 20rem;
+  background-color: rgba(0, 39, 155, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: .5rem;
+  padding: 2rem;
+}
+
+.available-agents-form>p {
+  color: white;
+  padding: 1rem;
+  background-color: rgb(0, 21, 41);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: .5rem;
+  font-size: 1.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.agent-btn {
+  color: white;
+  background-color: dodgerblue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: .5rem;
+  width: 10rem;
+  height: 3rem;
+  border: 0;
+  font-weight: 900;
+}
+
+.agent-btn:hover {
+  background-color: darkblue;
+  cursor: pointer;
+}
+
+.agent-remove {
+  background-color: crimson;
+}
+
+.agent-remove:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
+.available-agents>h3 {
+  font-size: 2rem;
+}
+
+.photo-container {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 4rem;
+  width: 70rem;
+  height: 40rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: .5rem;
+}
+
+.photo-container>p {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.list-image {
+  width: 70rem;
+  height: 30rem;
+}
+
+.listing-photo-title {
+  font-size: 4rem;
+  margin-top: 2.5rem;
 }
