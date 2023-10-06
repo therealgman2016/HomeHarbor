@@ -617,3 +617,58 @@ main {
   font-size: 4rem;
   margin-top: 2.5rem;
 }
+
+/* About Show Page */
+
+.about-title {
+  color: white;
+  font-size: 4rem;
+  padding: 1rem;
+  background-color: rgba(0, 50, 93, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: 60rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.about-title h1 {
+  font-size: 38px;
+  color: #fff;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: justify;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  margin-top: 20px;
+}
+
+.about-container h2 {
+  font-size:18px;
+  color: #333;
+}
+
+.about-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.about-footer hr {
+  border: 1px solid #333;
+}
+
+.about-footer p {
+  font-size: 16px;
+  color: #333;
+}
+
+.about-footer footer {
+  font-size: 14px;
+  color: #777; 
+}
