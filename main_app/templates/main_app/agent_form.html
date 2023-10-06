@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="homepage-container">
   {% if object %}
-    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+    <h1 class="page-title">Edit <span class="teal-text">{{object.name}}</span></h1>
   {% else %}
-    <h1>Add Agent</h1>
+    <h1 class="page-title">Add Agent</h1>
   {% endif %}
-  <!-- Leaving the action empty makes the form post to the same url used to display it -->
-  <form action="" method="post">
-    <!-- Django requires the following for security purposes -->
+  <form class="add-agent-container" action="" method="post">
     {% csrf_token %}
-    <table>
-      <!-- Render the inputs inside of <tr>s & <td>s -->
+    <table class="agent-form">
       {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit!" class="btn">
+    {% if object %}
+    <input class='add-listing-btn' type="submit" value="Edit Agent" class="btn">
+    {% else %}
+    <input class='add-listing-btn' type="submit" value="Add Agent" class="btn">
+    {% endif %}
   </form>
+</div>
 {% endblock %}

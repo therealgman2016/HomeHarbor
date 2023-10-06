@@ -26,6 +26,13 @@ def listings_index(request):
         'listings': listings
     })
 
+
+def listings_index_all(request):
+    listings = Listing.objects.all()
+    return render(request, 'listings/indexAll.html', {
+        'listings': listings
+})
+
 @login_required
 def listings_detail(request, listing_id):
     listing = Listing.objects.get(id=listing_id)
@@ -38,7 +45,7 @@ def listings_detail(request, listing_id):
 
 class ListingCreate(LoginRequiredMixin, CreateView):
     model = Listing
-    fields = ['price', 'description', 'sqft', 'address']
+    fields = ['address', 'price', 'description', 'sqft']
     
     def form_valid(self, form):
         form.instance.user = self.request.user
