@@ -2,6 +2,10 @@
 {% block content %}
 <div class="homepage-container">
   <h1 class="page-title">HomeHarbor's Agents</h1>
+  <div class="create-agent-div">
+    <h1>Want to register your own agent?</h1>
+    <a href="{% url 'agents_create' %}">Add a Agent</a>
+  </div>
   {% for agent in agent_list %}
   <div class="agent-index">
     <a href="{% url 'agents_detail' agent.id %}">
