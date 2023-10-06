@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="homepage-container">
+<h1 class="page-title">Listing Details</h1>
+
+
+<div class="photo-container">
+    {% if listing.photo_set.all %}
+        {% for photo in listing.photo_set.all %}
+            <img class='list-image' src="{{ photo.url }}">
+        {% endfor %}
+        <h1 class="listing-photo-title"> {{ listing.address }} </h1>
+    {% else %}
+        <img class='list-image' src="/static/images/cartoon.jpeg">
+        <h1 class="listing-photo-title"> {{ listing.address }} </h1>
+    {% endif %}
+</div>
+
+<div class="listing-index show-index detail-index">
+    <ul>
+      <li>${{ listing.price }}</li>
+      <li>{{ listing.sqft }} sqft</li>
+    </ul>
+    <p>{{ listing.description }}<p>
+</div>
+</div>
+
+  
+<div class="agent-container agent-detail-page">
+
+<div class="available-agents">
+  <h3>{{ listing.address }}'s Agents</h3>
+  {% if listing.agents.count %} {% for agent in listing.agents.all %}
+  <div class="available-agents-form">
+    <p>{{ agent.name }}</p>
+    <p>{{ agent.email }}</p>
+  </div>
+  {% endfor %} {% else %}
+  <h5>No Agents currently assigned</h5>
+  {% endif %}
+</div>
+
+  
+
+{% endblock %}

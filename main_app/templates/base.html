@@ -6,17 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Home Harbor</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head> 
 <body>
   <div class="nav-div">
     <div class="right-nav">
       <ul class="nav-list">
-        <li><a href="{% url 'index_all' %}">View All Listings</a></li>
-        <li><a href="{% url 'agents_index' %}">View All Agents</a></li>
+        <li><a href="{% url 'index_all' %}">Listings</a></li>
+        <li><a href="{% url 'agents_index' %}">Agents</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{% url 'agents_create' %}">Add a Agent</a></li>
-        <li><a href="{% url 'listings_create' %}">Add a Listing</a></li>
+        <li><a href="{% url 'listings_create' %}">Add Listing</a></li>
       </ul>
       {% endif %}
     </div>
@@ -27,8 +26,7 @@
       <ul class="nav-list">
         <li><a href="{% url 'about' %}">About</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{% url 'index' %}">View All My Listings</a></li>
-        <li><a href="{% url 'agents_index' %}">View All My Agents</a></li>
+        <li><a href="{% url 'index' %}">My Listings</a></li>
         <li><a href="{% url 'logout' %}">Log Out</a></li>
         {% else %}
         <li><a href="{% url 'signup' %}">Sign Up</a></li>

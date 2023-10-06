@@ -7,7 +7,7 @@
 {% for listing in listings %}
 
   <div class="listing-index">
-    <a href="{% url 'detail' listing.id %}">{{ listing.address }}
+    <a href="{% url 'detail_view' listing.id %}">{{ listing.address }}
       </a>
       <ul>
         <li>${{ listing.price }}</li>

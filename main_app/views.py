@@ -19,7 +19,7 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-@login_required
+
 def listings_index(request):
     listings = Listing.objects.filter(user=request.user)
     return render(request, 'listings/index.html', {
@@ -43,6 +43,14 @@ def listings_detail(request, listing_id):
     })
 
 
+def listings_detail_show(request, listing_id):
+    listing = Listing.objects.get(id=listing_id)
+    id_list = listing.agents.all().values_list('id')
+    agents_listing_doesnt_have = Agent.objects.exclude(id__in=id_list)
+    return render(request, 'listings/detail_view.html', {
+        'listing': listing, 'agents': agents_listing_doesnt_have
+    })
+
 class ListingCreate(LoginRequiredMixin, CreateView):
     model = Listing
     fields = ['address', 'price', 'description', 'sqft']
@@ -64,7 +72,7 @@ class ListingDelete(LoginRequiredMixin, DeleteView):
 
 # Agent Views
 
-class AgentList(LoginRequiredMixin, ListView):
+class AgentList(ListView):
     model = Agent
 
 
