@@ -37,22 +37,20 @@ HomeHarbor is a full-stack Django application that simplifies real estate proces
 
 # Wireframe
 
-[google slide](https://ga-students.slack.com/files/U05L4P283SM/F0609BY0WM6/homeharbor)
-
 Home Page
-![Alt text](!%5BHomePage%5D(images:Wireframe.png).png)
+![Alt text](main_app/static/images/!%5BHomePage%5D(images:Wireframe.png).png)
 
 About Page
-![Alt text](!%5BAbout%5D(images:Wireframe.png).png)
+![Alt text](main_app/static/images/!%5BAbout%5D(images:Wireframe.png).png)
 
 Sign Up Page
-![Alt text](!%5BSignUp%5D(images:Wireframe.png).png)
+![Alt text](main_app/static/images/!%5BSignUp%5D(images:Wireframe.png).png)
 
 Log In Page
-![Alt text](!%5BLogIn%5D(images:Wireframe.png).png)
+![Alt text](main_app/static/images/!%5BLogIn%5D(images:Wireframe.png).png)
 
 New Listing Page
-![Alt text](!%5BNewListing%5D(images:Wireframe.png).png)
+![Alt text](main_app/static/images/!%5BNewListing%5D(images:Wireframe.png).png)
 
 Add Agent Page
-![Alt text](!%5BAddAgent%5D(images:Wireframe.png).png)
+![Alt text](main_app/static/images/!%5BAddAgent%5D(images:Wireframe.png).png)
