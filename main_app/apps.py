@@ -7,5 +7,5 @@ class MainAppConfig(AppConfig):
     name = 'main_app'
     def ready(self):
        # make_superuser = "python3 manage.py createsuperuser"
-       print("-------------test-------------")
+       print("-------------active-------------")
 
