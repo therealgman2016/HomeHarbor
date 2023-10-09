@@ -31,7 +31,9 @@ DEBUG = env('DEBUG')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['homeharbor.onrender.com']
+ALLOWED_HOSTS = ['homeharbor.onrender.com',
+                 'localhost'
+                 ]
 
 
 # Application definition
