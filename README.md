@@ -40,7 +40,7 @@ HomeHarbor is a full-stack Django application that simplifies real estate proces
 [google slide](https://ga-students.slack.com/files/U05L4P283SM/F0609BY0WM6/homeharbor)
 
 Home Page
-![Alt text](!%5BHomePage%5D.png)
+![Alt text](!%5BHomePage%5D(images:Wireframe.png).png)
 
 About Page
 ![Alt text](!%5BAbout%5D(images:Wireframe.png).png)
