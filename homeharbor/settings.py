@@ -11,25 +11,27 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import environ
+import environ, os
 
-environ.Env()
-environ.Env.read_env()
+env = environ.Env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-52z44cg_-5stjq9(mt6r30bf(-o@gp-(np%su91jk*fkvs-px4'
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['homeharbor.onrender.com']
 
 
 # Application definition
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,14 +82,7 @@ WSGI_APPLICATION = 'homeharbor.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'homeharbor',
-        # 'HOST': 'localhost',  <-- (optional) some computers might need this line
-        # 'USER': 'admin', <-- (optional) postgres user name, if you have to sign into an account to open psql, you will want to add that user name here.
-        # 'PASSWORD': 'password123', <-- (optional) postgres user password, if you have to sign into an account to open psql, you will want to add that user password here.
-        # 'PORT': 3000 <-- if you desire to use a port other than 8000, you can change that here to any valid port id, some number between 1 and 65535 that isn't in use by some other process on your machine. The reason for this port number range is because of how TCP/IP works, a TCP/IP protocol network(the most widely used protocol used on the web) allocated 16 bits for port numbers. This means that number must be greater than 0 and less than 2^15 -1. 
-    }
+    'default': env.db()
 }
 
 
