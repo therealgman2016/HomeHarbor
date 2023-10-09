@@ -6,6 +6,9 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('listings/', views.listings_index, name='index'),
     path('listings/<int:listing_id>/', views.listings_detail, name='detail'),
+
+    path('listings/view/<int:listing_id>/', views.listings_detail_show, name='detail_view'),
+
     path('listings/create/', views.ListingCreate.as_view(), name='listings_create'),
     path('listings/<int:pk>/update/', views.ListingUpdate.as_view(), name='listings_update'),
     path('listings/<int:pk>/delete/', views.ListingDelete.as_view(), name='listings_delete'),
@@ -21,5 +24,6 @@ urlpatterns = [
     path('listings/<int:listing_id>/assoc_agent/<int:agent_id>/', views.assoc_agent, name='assoc_agent'),
     path('listings/<int:listing_id>/de_assoc_agent/<int:agent_id>/', views.de_assoc_agent, name='de_assoc_agent'),
     path('accounts/signup/', views.signup, name='signup'),
+
 
 ]
