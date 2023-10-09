@@ -4,9 +4,9 @@ HomeHarbor is a full-stack Django application that simplifies real estate proces
 
 # Getting Started
 
-- Pitch Deck: https://docs.google.com/presentation/d/1-Fcj-PkxT1_R7s5x53oIRCWzYlGfnyMWdTJLpNpQR_A/edit#slide=id.g287c9bdf3a3_0_201
+- [Pitch Deck](https://docs.google.com/presentation/d/1-Fcj-PkxT1_R7s5x53oIRCWzYlGfnyMWdTJLpNpQR_A/edit#slide=id.g287c9bdf3a3_0_201)
 
-- Trello: https://trello.com/b/PZtfCtcF/project-3-homeharbor
+- [Trello](https://trello.com/b/PZtfCtcF/project-3-homeharbor)
 
 - Deployment:
 
