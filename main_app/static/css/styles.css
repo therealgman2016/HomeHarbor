@@ -708,22 +708,3 @@ main {
   font-size:18px;
   color: #333;
 }
-
-.about-footer {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.about-footer hr {
-  border: 1px solid #333;
-}
-
-.about-footer p {
-  font-size: 16px;
-  color: #333;
-}
-
-.about-footer footer {
-  font-size: 14px;
-  color: #777; 
-}
