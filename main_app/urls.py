@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import ResetPasswordView
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -24,6 +25,8 @@ urlpatterns = [
     path('listings/<int:listing_id>/assoc_agent/<int:agent_id>/', views.assoc_agent, name='assoc_agent'),
     path('listings/<int:listing_id>/de_assoc_agent/<int:agent_id>/', views.de_assoc_agent, name='de_assoc_agent'),
     path('accounts/signup/', views.signup, name='signup'),
+    # password reset
+    path('password-reset/', ResetPasswordView.as_view(), name='password_reset'),
 
 
 ]

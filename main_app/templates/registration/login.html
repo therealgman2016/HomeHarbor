@@ -9,5 +9,6 @@
     <input class='log-in-input' type="hidden" name="next" value="{{ next }}">
     <button class='add-listing-btn' type="submit" class="btn">Log In</button>
   </form>
+  <a href="{% url 'password_reset' %}"><i>Forgot Password?</i></a>
 </div>
 {% endblock %}
