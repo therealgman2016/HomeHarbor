@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Home Harbor</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head> 
 <body>
   <div class="nav-div">
@@ -14,10 +14,8 @@
       <ul class="nav-list">
         <li><a href="{% url 'index_all' %}">Listings</a></li>
         <li><a href="{% url 'agents_index' %}">Agents</a></li>
-        {% if user.is_authenticated %}
         <li><a href="{% url 'listings_create' %}">Add Listing</a></li>
       </ul>
-      {% endif %}
     </div>
     <div class="hh-div">
       <a class='hh-title' href="{% url 'home' %}">HomeHarbor</a>
