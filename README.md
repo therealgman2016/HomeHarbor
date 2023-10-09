@@ -1,9 +1,9 @@
 # HomeHarbor
 HomeHarbor is a full-stack Django application that simplifies real estate processes. Users can create detailed house listings, choose their own agents, and explore other users' listings. The backend, built on Django, manages data modeling and user authentication, ensuring a secure experience.
 # Getting Started
-- Pitch Deck: https://docs.google.com/presentation/d/1-Fcj-PkxT1_R7s5x53oIRCWzYlGfnyMWdTJLpNpQR_A/edit#slide=id.g287c9bdf3a3_0_201
-- Trello: https://trello.com/b/PZtfCtcF/project-3-homeharbor
-- Deployment:
+- [Pitch Deck](https://docs.google.com/presentation/d/1-Fcj-PkxT1_R7s5x53oIRCWzYlGfnyMWdTJLpNpQR_A/edit#slide=id.g287c9bdf3a3_0_201)
+- [Trello Board](https://trello.com/b/PZtfCtcF/project-3-homeharbor)
+- [Deployment](www.google.com)
 # Technologies Used
 - Python
 - Django
